@@ -44,7 +44,7 @@ else:
 
 # big vars
 columns = 9
-rows = 10
+rows = 7
 maxrows = 15
 maxsize = 100
 
@@ -358,6 +358,7 @@ class Accordion(QStackedWidget):
         self.addWidget(self.widget2)
 
         self.widget1.setFixedHeight(30)
+        self.setFixedHeight(30)
 
     def open_accordion(self):
         self.setCurrentIndex(1)
@@ -366,6 +367,7 @@ class Accordion(QStackedWidget):
     def close_accordion(self):
         self.setCurrentIndex(0)
         self.widget1.setFixedHeight(30)
+        self.setFixedHeight(30)
 
 class Directories(QWidget):
 
@@ -518,24 +520,24 @@ class Directories(QWidget):
                                     # this is TIER THREE
 
                                     # subsubfolders
-                                    # for subsubfolder in subfolder:
-                                    #     subsubdirpath = os.path.join(subdirpath, subsubfolder)
-                                    #     button = DirButton(subsubdirpath, subsubfolder, self.color3, self.fontcolor)
-                                    #     button.setFixedWidth(130)
-                                    #     subfolderslayout.addWidget(button)
+                                    for subsubfolder in subfolder:
+                                        subsubdirpath = os.path.join(subdirpath, subsubfolder)
+                                        button = DirButton(subsubdirpath, subsubfolder, self.color3, self.fontcolor)
+                                        button.setFixedWidth(130)
+                                        subfolderslayout.addWidget(button)
 
                                     # BELOW IS FOR WHENEVER YOU GET THE ACCORDION STUFF WORKING
-                                    if len(subfolder) > 6:
-                                        # accordion
-                                        accordion = Accordion(subdirpath, subfolder, self.color3, self.fontcolor)
-                                        subfolderslayout.addWidget(accordion)
-                                    else:
-                                        # subsubfolders
-                                        for subsubfolder in subfolder:
-                                            subsubdirpath = os.path.join(subdirpath, subsubfolder)
-                                            button = DirButton(subsubdirpath, subsubfolder, self.color3, self.fontcolor)
-                                            button.setFixedWidth(130)
-                                            subfolderslayout.addWidget(button)
+                                    # if len(subfolder) > 6:
+                                    #     # accordion
+                                    #     accordion = Accordion(subdirpath, subfolder, self.color3, self.fontcolor)
+                                    #     subfolderslayout.addWidget(accordion)
+                                    # else:
+                                    #     # subsubfolders
+                                    #     for subsubfolder in subfolder:
+                                    #         subsubdirpath = os.path.join(subdirpath, subsubfolder)
+                                    #         button = DirButton(subsubdirpath, subsubfolder, self.color3, self.fontcolor)
+                                    #         button.setFixedWidth(130)
+                                    #         subfolderslayout.addWidget(button)
 
                                 folderslayout.addWidget(subfolders)
 
