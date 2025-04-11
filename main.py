@@ -8,6 +8,8 @@
 # kill the main.py that shows up
 #
 #
+# Make thing have scrollable rows. WIP.
+#
 # version:
 compassVersion = 'v1.0.0'
 #
