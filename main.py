@@ -656,12 +656,6 @@ class SettingsWindow(QDialog):
 
         self.setLayout(layout)
 
-    def open_file(self):
-        if opsys == 'posix':
-            webbrowser.open(os.path.join('res','addresses.csv'))
-        elif opsys == 'nt':
-            os.startfile(os.path.join('res','addresses.csv'))
-
     def save_data(self):
         with open(os.path.join('res','settings.json'), 'r+') as file:
             data = json.load(file)
