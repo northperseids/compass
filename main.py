@@ -774,10 +774,13 @@ class TopButtons(QWidget):
         with open(os.path.join('res','settings.json'), 'r') as file:
             data = json.load(file)
             self.parent_dir = data['dirpath']
-        lv1 = sorted(os.listdir(self.parent_dir))
-        lv1 = [d for d in lv1 if os.path.isdir(os.path.join(self.parent_dir, d)) and d[0] not in hidden_prefixes]
-        for folder in lv1:
-            self.dropdown.addItem(folder)
+        try:
+            lv1 = sorted(os.listdir(self.parent_dir))
+            lv1 = [d for d in lv1 if os.path.isdir(os.path.join(self.parent_dir, d)) and d[0] not in hidden_prefixes]
+            for folder in lv1:
+                self.dropdown.addItem(folder)
+        except FileNotFoundError:
+            self.dropdown.addItem('No file/directory selected.')
 
 class ContextMenu(QMenu):
 

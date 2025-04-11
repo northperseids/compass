@@ -13,4 +13,4 @@ Colors can be adjusted using HTML-compatible color codes.
 ## Future plans
 - Re-organize the code so it's not one gigantic file.
 - Incorporate files as well so it's not just folders appearing.
-- ~~Add an accordion dropdown for lists of over 6 folders~~ DONE
+- ~~Add an accordion dropdown for lists of over 6 folders~~
