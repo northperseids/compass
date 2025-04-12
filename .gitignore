@@ -11,3 +11,4 @@ mainobject.py
 shortcuts.py
 main.spec
 WINDOWS/
+__pycache__
