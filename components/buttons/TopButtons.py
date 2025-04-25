@@ -16,13 +16,13 @@ class TopButtons(QWidget):
 
         self.button = QPushButton("Hide")
         self.button.setGraphicsEffect(QGraphicsOpacityEffect(opacity=1.0))
-        self.button.setStyleSheet('background-color: #2b2d31;')
+        self.button.setStyleSheet('background-color: #2b2d31; color: white;')
         self.button.setFixedSize(100, 25)
         self.button.clicked.connect(self.trigger_fold)
 
         self.open = QPushButton("Open")
         self.open.setGraphicsEffect(QGraphicsOpacityEffect(opacity=1.0))
-        self.open.setStyleSheet('background-color: #2b2d31;')
+        self.open.setStyleSheet('background-color: #2b2d31; color: white;')
         self.open.setFixedSize(100, 25)
         self.open.clicked.connect(self.open_dir)
 
@@ -30,7 +30,7 @@ class TopButtons(QWidget):
         self.dropdown.setFixedHeight(25)
         self.dropdown.setMaximumWidth(500)
         self.dropdown.setMinimumWidth(200)
-        self.dropdown.setStyleSheet('background-color: #2b2d31;')
+        self.dropdown.setStyleSheet('background-color: #2b2d31; color: white;')
         self.refresh_dropdown()
         self.dropdown.currentIndexChanged.connect(self.dropdown_selected)
 
