@@ -120,7 +120,7 @@ class Directories(QWidget):
                                 column = QWidget()
                                 collayout = QVBoxLayout()
                                 column.setLayout(collayout)
-                                button.setFixedWidth(150)
+                                button.setFixedWidth(175)
                                 collayout.addWidget(button)
                                 #collayout.addStretch()
                                 colslayout.addWidget(column)
@@ -128,7 +128,7 @@ class Directories(QWidget):
                                 continue
                             else:
                                 button = DirButton(parentdirpath, folder, self.color1, self.fontcolor)
-                                button.setFixedWidth(150)
+                                button.setFixedWidth(175)
                                 folderslayout.addWidget(button)
 
                         elif type(folder) == list:
@@ -157,7 +157,7 @@ class Directories(QWidget):
                                         button = DirButton(parentdirpath, '(List truncated)', self.color1, self.fontcolor)
                                     else:
                                         button = DirButton(subdirpath, subfolder, self.color2, self.fontcolor)
-                                    button.setFixedWidth(140)
+                                    button.setFixedWidth(155)
                                     subfolderslayout.addWidget(button)
 
                                 else:
@@ -168,7 +168,7 @@ class Directories(QWidget):
                                     for subsubfolder in subfolder:
                                         subsubdirpath = os.path.join(subdirpath, subsubfolder)
                                         button = DirButton(subsubdirpath, subsubfolder, self.color3, self.fontcolor)
-                                        button.setFixedWidth(130)
+                                        button.setFixedWidth(140)
                                         subfolderslayout.addWidget(button)
 
                                     # BELOW IS FOR WHENEVER YOU GET THE ACCORDION STUFF WORKING

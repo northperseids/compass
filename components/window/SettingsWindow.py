@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QDialog, QVBoxLayout, QWidget, QHBoxLayout, QLineEdit, QLabel, QPushButton
+from PySide6.QtWidgets import QDialog, QVBoxLayout, QWidget, QHBoxLayout, QLineEdit, QLabel, QPushButton, QCheckBox
 from PySide6.QtCore import Signal, Qt
 from components.ui.HLine import HLine
 import os, json
@@ -23,6 +23,8 @@ class SettingsWindow(QDialog):
             self.color2 = QLineEdit(data['color2'])
             self.color3 = QLineEdit(data['color3'])
             self.fontcolor = QLineEdit(data['fontcolor'])
+            self.ascending = QCheckBox('Ascending?')
+            self.ascending.setChecked(data['ascending'])
 
         self.setWindowTitle('Settings')
 
@@ -50,6 +52,7 @@ class SettingsWindow(QDialog):
         layout.addWidget(self.color3)
         layout.addWidget(QLabel(text='Font Color:'))
         layout.addWidget(self.fontcolor)
+        layout.addWidget(self.ascending)
         layout.addWidget(HLine(self))
         layout.addWidget(savebutton, alignment=Qt.AlignmentFlag.AlignHCenter)
 
@@ -64,6 +67,7 @@ class SettingsWindow(QDialog):
             data['color2'] = self.color2.text()
             data['color3'] = self.color3.text()
             data['fontcolor'] = self.fontcolor.text()
+            data['ascending'] = self.ascending.isChecked()
             file.seek(0)
             json.dump(data, file)
             file.truncate()

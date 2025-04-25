@@ -11,7 +11,7 @@
 # Make thing have scrollable rows. WIP.
 #
 # version:
-compassVersion = 'v1.0.0'
+compassVersion = 'v1.1.0'
 #
 #
 # ⠀⠀⠀⠀⠀⠀ ⠀⠀ ⣀⠀⠀⠀  ⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
