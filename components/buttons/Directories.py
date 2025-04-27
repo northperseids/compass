@@ -116,7 +116,7 @@ class Directories(QWidget):
                         elif type(folder) == str:
                             # this is TIER ONE
                             if folder == '...':
-                                button = DirButton(dirpath, '(List truncated)', self.color1, self.fontcolor)
+                                button = DirButton(dirpath, '(List truncated)', self.color1, self.fontcolor, 1)
                                 column = QWidget()
                                 collayout = QVBoxLayout()
                                 column.setLayout(collayout)
@@ -127,7 +127,7 @@ class Directories(QWidget):
                                 colslayout.setAlignment(Qt.AlignmentFlag.AlignRight)
                                 continue
                             else:
-                                button = DirButton(parentdirpath, folder, self.color1, self.fontcolor)
+                                button = DirButton(parentdirpath, folder, self.color1, self.fontcolor, 1)
                                 button.setFixedWidth(175)
                                 folderslayout.addWidget(button)
 
@@ -152,11 +152,11 @@ class Directories(QWidget):
                                 elif type(subfolder) == str:
                                     # this is TIER TWO
                                     if subfolder == '...':
-                                        button = DirButton(parentdirpath, subfolder, self.color1, self.fontcolor)
+                                        button = DirButton(parentdirpath, subfolder, self.color1, self.fontcolor, 2)
                                     elif subfolder == 'p...':
-                                        button = DirButton(parentdirpath, '(List truncated)', self.color1, self.fontcolor)
+                                        button = DirButton(parentdirpath, '(List truncated)', self.color1, self.fontcolor, 2)
                                     else:
-                                        button = DirButton(subdirpath, subfolder, self.color2, self.fontcolor)
+                                        button = DirButton(subdirpath, subfolder, self.color2, self.fontcolor, 2)
                                     button.setFixedWidth(155)
                                     subfolderslayout.addWidget(button)
 
@@ -167,7 +167,7 @@ class Directories(QWidget):
                                     # subsubfolders
                                     for subsubfolder in subfolder:
                                         subsubdirpath = os.path.join(subdirpath, subsubfolder)
-                                        button = DirButton(subsubdirpath, subsubfolder, self.color3, self.fontcolor)
+                                        button = DirButton(subsubdirpath, subsubfolder, self.color3, self.fontcolor, 3)
                                         button.setFixedWidth(140)
                                         subfolderslayout.addWidget(button)
 
