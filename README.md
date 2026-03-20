@@ -14,3 +14,8 @@ Colors can be adjusted using HTML-compatible color codes.
 - Re-organize the code so it's not one gigantic file.
 - Incorporate files as well so it's not just folders appearing.
 - ~~Add an accordion dropdown for lists of over 6 folders~~
+
+<details>
+<summary>(internal CCID)</summary>
+CCID.03.01.PY.compass.0&Z-1&V
+</details>
